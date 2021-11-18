@@ -1,6 +1,6 @@
-:root {
+/* :root {
     --bs-primary: #4D5483;
-}
+} */
 
 body {
     margin: 0;
@@ -9,9 +9,10 @@ body {
 .navbar {
     position: fixed;
     width: 100%;
-    background-color: var(--bs-primary);
+    background-color: white;
     top: 0;
     height: 100px;
+    border-bottom: 1px solid gray;
 }
 
 .navbar_item_container {
@@ -19,11 +20,11 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
 }
 
 .navbar a {
     text-decoration: none;
-    color: white;
 }
 
 .navbar_logo {
@@ -33,11 +34,11 @@ body {
 .navbar_menu {
     display: flex;
     list-style: none;
-    padding-left: 0;
+    padding: 8px 12px;
 }
 
 .navbar_menu a {
-    color:lightgray;
+    color:gray;
     
 }
 
@@ -46,7 +47,7 @@ body {
 }
 
 .navbar_menu a:hover {
-    color:white;
+    color: black;
 }
 
 
@@ -65,7 +66,7 @@ body {
     background-image: url(/assets/img/topbar_background.jpg);
   
     /* Set a specific height */
-    min-height: 200px; 
+    min-height: 200px;
   
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
@@ -74,18 +75,6 @@ body {
     background-size: cover;
     background-position-y: -200px;
   }
-
-
-/* .top_logo {
-    position: absolute;
-    left: 50%;
-    margin-top: -30px;
-    margin-left: -30px;
-    border: 10px solid white;
-    border-radius: 50%;
-    height: 50px;
-    width: 50px;
-} */
 
 
 .top_logo {
