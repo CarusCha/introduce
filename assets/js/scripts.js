@@ -1,47 +1,79 @@
+
+// navigation bar
 const navbarHTML = 
-`<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="nav_bar_all">
-<div class="container-fluid">
-<label id="nav_title"><p>Passionable developer</p>, <p>Carus Cha's website</p></label>
-  <a id="nav_title" class="navbar-brand block-with-text" href="index.html"></a>
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+`<nav class="navbar">
+    <div class="navbar_logo">
+        <a href="index.html">
+          <img src="assets/img/logo.png" alt="logo"> 
+          Carus Cha
+        </a>
+    </div>
+    <ul class="navbar_menu">
+        <li><a id="family" href="family.html">Family</a></li>
+        <li><a id="interest" href="interest.html">Interest</a></li>
+        <li><a id="skill" href="skill.html">Skill</a></li>
     </ul>
-      <ul class="navbar-nav mb-2 mb-lg-0">
-      <li class="nav-item">
-        <a id="family" class="nav-link" href="family.html">Family</a>
-      </li>
-      <li class="nav-item">
-        <a id="interest" class="nav-link" href="interest.html">Interest</a>
-      </li>
-      <li class="nav-item">
-        <a id="skill" class="nav-link" href="skill.html">Skill</a>
-      </li>
-    </ul>
-  </div>
-</div>
+
+    <div class="hamburger_toggle">
+        <a href="#" class="hamburger_toggle_button">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </a>
+</div>        
 </nav>
 `;
 
+document.querySelector("#nav_bar").innerHTML = navbarHTML;
+const family = document.querySelector('a[id="family"]');
+const interest = document.querySelector('a[id="interest"]');
+const skill = document.querySelector('a[id="skill"]');
+switch(window.location.pathname) {
+case "/family.html":
+  family.classList.add("active");
+  break;
+case "/interest.html":
+  interest.classList.add("active");
+  break;
+case "/skill.html":
+  skill.classList.add("active");
+  break;
+}
 
 
-document.addEventListener("DOMContentLoaded", function() {
-    document.querySelector("#nav_bar").innerHTML = navbarHTML;
-    document.querySelectorAll('a[class="nav');
-    console.log(window.location.pathname);
-    switch(window.location.pathname) {
-    case "/family.html":
-      document.querySelector('a[id="family"]').className += " active";
-      // document.querySelector('a[id="family"]').classList.add("active");
-      // navbar.classList.remove("sticky");
-      break;
-    case "/interest.html":
-      document.querySelector('a[id="interest"]').className += " active";
-      break;
-    case "/skill.html":
-      document.querySelector('a[id="skill"]').className += " active";
-    }
+// hamburger toggle
+const hamburgerButton = document.querySelector('.hamburger_toggle_button');
+const menu = document.querySelector('.navbar_menu');
+
+hamburgerButton.addEventListener('click', () => {
+  menu.classList.toggle('active');
 });
 
+
+
+// footer
+const footerbarHTML = 
+`
+<div class="row footer_container">
+    <div class="column icons">
+        <div>Icons made by 
+        <a href="https://www.flaticon.com/authors/surang" title="surang">surang</a>
+        <a href="https://www.freepik.com" title="Freepik">, Freepik</a>
+        <a href="https://www.flaticon.com/authors/good-ware" title="Good Ware">, Good Ware</a>
+        <a href="https://www.flaticon.com/authors/ruslan-babkin" title="Ruslan Babkin">, Ruslan Babkin</a>
+        <a href="https://www.flaticon.com/authors/riajulislam" title="riajulislam">, riajulislam</a>
+        <a href="https://www.flaticon.com/authors/ghost-icon" title="ghost_icon">, ghost_icon</a>
+        <a href="https://www.flaticon.com/authors/wanicon" title="wanicon">and wanicon</a>
+        from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+
+    </div>
+    <div class="column copyright">
+        <div>
+            &#169; 2021 by Carus Cha. All rights reserved.
+        </div>
+    </div>
+</div>
+
+
+`;
+document.querySelector(".footer").innerHTML = footerbarHTML;
